@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import './CaseStudies.css';
 
 const ChevronLeft = () => (
@@ -27,11 +27,27 @@ const slides = [
 ];
 
 const CARD_WIDTH = 1015;
-const CARD_GAP = 50; // gap between cards; peek = (viewport - 1015) / 2 - 50
+const CARD_GAP = 50;
 
 export default function CaseStudies() {
   const [current, setCurrent] = useState(0);
   const total = slides.length;
+  const trackRef = useRef<HTMLDivElement>(null);
+  const [cardOffset, setCardOffset] = useState(CARD_WIDTH + CARD_GAP);
+
+  // Measure actual rendered card width + gap so translateX is correct at every viewport
+  useEffect(() => {
+    const measure = () => {
+      if (!trackRef.current) return;
+      const card = trackRef.current.querySelector('.cs-card') as HTMLElement | null;
+      if (!card) return;
+      const gap = parseFloat(getComputedStyle(trackRef.current).gap) || CARD_GAP;
+      setCardOffset(card.offsetWidth + gap);
+    };
+    measure();
+    window.addEventListener('resize', measure);
+    return () => window.removeEventListener('resize', measure);
+  }, []);
 
   return (
     <section className="cs-section">
@@ -40,8 +56,9 @@ export default function CaseStudies() {
       {/* ── Carousel ──────────────────────────────────────── */}
       <div className="cs-carousel">
         <div
+          ref={trackRef}
           className="cs-track"
-          style={{ transform: `translateX(${-(current * (CARD_WIDTH + CARD_GAP))}px)` }}
+          style={{ transform: `translateX(${-(current * cardOffset)}px)` }}
         >
           {slides.map((slide, i) => {
             const dist = Math.abs(i - current);

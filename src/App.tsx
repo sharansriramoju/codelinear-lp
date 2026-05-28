@@ -8,6 +8,7 @@ import CTABanner from './components/CTABanner';
 import Insights from './components/Insights';
 import CaseStudies from './components/CaseStudies';
 import FooterCTA from './components/FooterCTA';
+import Footer from './components/Footer';
 import './index.css';
 
 function App() {
@@ -23,6 +24,7 @@ function App() {
       <Insights />
       <CaseStudies />
       <FooterCTA />
+      <Footer />
     </div>
   );
 }

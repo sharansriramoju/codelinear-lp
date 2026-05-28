@@ -272,11 +272,6 @@
   .cs-heading {
     font-size: 40px;
   }
-
-  .cs-arrow-dots {
-    left: 50%;
-    transform: translateX(-50%);
-  }
 }
 
 @media (max-width: 900px) {
@@ -287,17 +282,27 @@
 
   .cs-track {
     padding-left: 48px;
+    gap: 30px;
   }
 
+  /* Cap at 680px but never wider than the viewport */
   .cs-card {
-    width: 700px;
+    width: min(680px, calc(100vw - 96px));
     height: auto;
     min-height: 380px;
   }
 
+  .cs-thumb {
+    width: 340px;
+    height: 310px;
+  }
+
   .cs-content {
-    width: 220px;
-    left: 370px;
+    left: 368px;
+    width: calc(100% - 388px);
+    top: 40px;
+    height: auto;
+    min-height: 300px;
   }
 
   .cs-title {
@@ -305,7 +310,7 @@
   }
 
   .cs-read-more {
-    width: 200px;
+    width: 100%;
   }
 
   .cs-arrow-dots {
@@ -325,35 +330,70 @@
 }
 
 @media (max-width: 640px) {
+  .cs-section {
+    padding: 40px 0 60px;
+  }
+
   .cs-heading {
     font-size: 26px;
     padding: 0 24px;
+    margin-bottom: 32px;
   }
 
+  /* card = 100vw - (20px left-pad + 16px gap + 20px right-peek) */
   .cs-track {
-    padding-left: 24px;
+    padding-left: 20px;
+    gap: 16px;
   }
 
   .cs-card {
-    width: calc(100vw - 48px);
+    width: calc(100vw - 56px);
     height: auto;
     display: flex;
     flex-direction: column;
-    padding: 20px;
+    padding: 16px;
   }
 
+  /* Restore position:relative so thumb-grid stays contained */
   .cs-thumb {
-    position: static;
+    position: relative;
+    top: auto;
+    left: auto;
     width: 100%;
-    height: 220px;
+    height: 190px;
+    flex-shrink: 0;
+  }
+
+  /* Scale icon grid to fit mobile thumb */
+  .cs-thumb-grid {
+    top: 16px;
+    left: 12px;
+    width: auto;
+    height: auto;
+    grid-template-columns: repeat(2, 70px);
+    grid-template-rows: repeat(2, 70px);
+    column-gap: 20px;
+    row-gap: 14px;
+  }
+
+  .cs-icon {
+    width: 70px;
+    height: 70px;
   }
 
   .cs-content {
     position: static;
+    top: auto;
+    left: auto;
     width: 100%;
     height: auto;
-    min-height: 280px;
     margin-top: 16px;
+    gap: 20px;
+    justify-content: flex-start;
+  }
+
+  .cs-title {
+    font-size: 22px;
   }
 
   .cs-read-more {
@@ -364,7 +404,13 @@
     flex-wrap: wrap;
     height: auto;
     gap: 16px;
-    padding: 0 24px;
+    padding: 0 20px;
     margin-top: 24px;
+  }
+
+  .cs-view-all {
+    margin-left: 0;
+    width: 100%;
+    justify-content: center;
   }
 }
