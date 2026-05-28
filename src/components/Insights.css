@@ -1,0 +1,363 @@
+/* ── Insights section ─────────────────────────────────────── */
+.ins-section {
+  position: relative;
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  background: #000d12;
+  display: flex;
+  align-items: flex-start;
+  padding: 80px;
+  gap: 147px;
+}
+
+/* ── Gradient glow ────────────────────────────────────────── */
+.ins-glow {
+  position: absolute;
+  width: 556.77px;
+  height: 556.77px;
+  top: 160.23px;
+  left: 58.23px;
+  background: linear-gradient(103.43deg, #00b4fd -1.02%, #003ace 83.53%);
+  opacity: 0.1;
+  border-radius: 50%;
+  filter: blur(200px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ── Left column ──────────────────────────────────────────── */
+.ins-left {
+  width: 463px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+  position: sticky;
+  top: 120px;
+  z-index: 1;
+}
+
+.ins-heading {
+  font-family: 'Archivo', sans-serif;
+  font-weight: 400;
+  font-size: 37px;
+  line-height: 120%;
+  letter-spacing: -0.37px;
+  color: #e9f4f9;
+  margin: 0;
+}
+
+.ins-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 48px;
+  border: 1px solid #e9f4f9;
+  border-radius: 8px;
+  background: transparent;
+  color: #e9f4f9;
+  font-family: 'Chivo Mono', monospace;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 130%;
+  text-transform: uppercase;
+  cursor: pointer;
+  width: fit-content;
+  transition: background 0.2s ease;
+}
+
+.ins-btn:hover {
+  background: rgba(233, 244, 249, 0.08);
+}
+
+/* ── Right cards column ───────────────────────────────────── */
+.ins-cards {
+  width: 670px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 29px;
+  z-index: 1;
+}
+
+/* ── Base card ────────────────────────────────────────────── */
+.ins-card {
+  border-radius: 18px;
+  background: #01141b;
+  overflow: hidden;
+}
+
+/* ── Featured card ────────────────────────────────────────── */
+.ins-card--featured {
+  width: 670px;
+  height: 318px;
+  display: flex;
+  align-items: flex-start;
+  padding: 25.5px 0 25.5px 24px;
+}
+
+/* thumbnail dark box */
+.ins-thumb {
+  width: 295px;
+  height: 267px;
+  flex-shrink: 0;
+  border-radius: 8px;
+  background: #07193c;
+  overflow: hidden;
+  position: relative;
+}
+
+/* 2×2 icon grid — positioned per Figma: top 24.41px, left 18.9px */
+.ins-thumb-grid {
+  position: absolute;
+  top: 24.41px;
+  left: 18.9px;
+  width: 257.198px;
+  height: 218.18px;
+  display: grid;
+  grid-template-columns: repeat(2, 97.099px);
+  grid-template-rows: repeat(2, 97.09px);
+  column-gap: 63px;
+  row-gap: 24px;
+}
+
+.ins-icon {
+  width: 97.099px;
+  height: 97.09px;
+  object-fit: contain;
+  display: block;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+/* content area on right of featured card */
+.ins-content--featured {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  height: 267px;
+  padding: 0 24px;
+  gap: 12px;
+}
+
+/* ── Small cards row ──────────────────────────────────────── */
+.ins-bottom-row {
+  display: flex;
+  gap: 29px;
+  width: 670px;
+}
+
+.ins-card--small {
+  width: 320.5px;
+  height: 318px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  padding: 28px 24px;
+  gap: 10px;
+}
+
+/* ── Shared card content ──────────────────────────────────── */
+.ins-tag {
+  font-family: 'Chivo Mono', monospace;
+  font-weight: 400;
+  font-size: 11px;
+  line-height: 130%;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: #2490bb;
+  display: block;
+}
+
+.ins-title {
+  font-family: 'Archivo', sans-serif;
+  font-weight: 400;
+  font-size: 27px;
+  line-height: 120%;
+  letter-spacing: 0;
+  color: #e9f4f9;
+  margin: 0;
+}
+
+.ins-meta {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.ins-author,
+.ins-date {
+  font-family: 'Archivo', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 130%;
+  color: #64a8c4;
+  opacity: 0.8;
+}
+
+/* READ MORE — pushed to bottom via margin-top: auto */
+.ins-read-more {
+  width: 287px;
+  height: 36px;
+  margin-top: auto;
+  border: 1px solid rgba(233, 244, 249, 0.5);
+  border-radius: 10px;
+  background: transparent;
+  color: rgba(233, 244, 249, 0.5);
+  font-family: 'Chivo Mono', monospace;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 130%;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: border-color 0.2s ease, color 0.2s ease;
+  flex-shrink: 0;
+}
+
+.ins-read-more:hover {
+  border-color: #e9f4f9;
+  color: #e9f4f9;
+}
+
+/* ── Footer ───────────────────────────────────────────────── */
+.ins-footer {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.ins-all-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: #2490bb;
+  text-decoration: none;
+  font-family: 'Chivo Mono', monospace;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 130%;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transition: opacity 0.2s ease;
+}
+
+.ins-all-text {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.ins-all-link:hover {
+  opacity: 0.8;
+}
+
+/* ── Responsive ──────────────────────────────────────────── */
+@media (max-width: 1200px) {
+  .ins-section {
+    gap: 60px;
+    padding: 60px 48px;
+  }
+
+  .ins-left {
+    width: 300px;
+  }
+
+  .ins-heading {
+    font-size: 30px;
+  }
+
+  .ins-cards {
+    width: auto;
+    flex: 1;
+  }
+
+  .ins-card--featured {
+    width: 100%;
+    height: auto;
+    min-height: 318px;
+  }
+
+  .ins-bottom-row {
+    width: 100%;
+  }
+
+  .ins-card--small {
+    flex: 1;
+    width: auto;
+    height: auto;
+    min-height: 250px;
+  }
+}
+
+@media (max-width: 900px) {
+  .ins-section {
+    flex-direction: column;
+    padding: 60px 48px;
+    gap: 48px;
+  }
+
+  .ins-left {
+    position: static;
+    width: 100%;
+    max-width: 463px;
+  }
+
+  .ins-cards {
+    width: 100%;
+  }
+
+  .ins-card--featured {
+    width: 100%;
+    height: auto;
+    flex-direction: column;
+    padding: 20px;
+    gap: 20px;
+  }
+
+  .ins-thumb {
+    width: 100%;
+    height: 220px;
+  }
+
+  .ins-content--featured {
+    height: auto;
+    padding: 0;
+  }
+
+  .ins-bottom-row {
+    width: 100%;
+  }
+}
+
+@media (max-width: 640px) {
+  .ins-section {
+    padding: 60px 24px;
+  }
+
+  .ins-heading {
+    font-size: 28px;
+  }
+
+  .ins-bottom-row {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .ins-card--small {
+    width: 100%;
+    min-height: auto;
+  }
+
+  .ins-read-more {
+    width: 100%;
+  }
+
+  .ins-thumb-grid {
+    grid-template-columns: repeat(2, 72px);
+    grid-template-rows: repeat(2, 72px);
+  }
+
+  .ins-icon {
+    width: 72px;
+    height: 72px;
+  }
+}
