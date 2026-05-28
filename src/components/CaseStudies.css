@@ -1,0 +1,370 @@
+/* ── Case Studies section ─────────────────────────────────── */
+.cs-section {
+  position: relative;
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  background: #000d12;
+  overflow: hidden;
+  padding: 60px 0 100px;
+}
+
+/* ── Heading ──────────────────────────────────────────────── */
+.cs-heading {
+  text-align: center;
+  font-family: 'Archivo', sans-serif;
+  font-weight: 400;
+  font-size: 53px;
+  line-height: 120%;
+  letter-spacing: 0;
+  color: #e9f4f9;
+  margin: 0 0 48px;
+}
+
+/* ── Carousel ─────────────────────────────────────────────── */
+.cs-carousel {
+  overflow: visible; /* section handles clipping */
+}
+
+.cs-track {
+  display: flex;
+  gap: 50px;
+  /* calc centres the active card on any viewport; peek = (100% - 1015px)/2 - 50px */
+  padding-left: calc((100% - 1015px) / 2);
+  transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  will-change: transform;
+}
+
+/* ── Card ─────────────────────────────────────────────────── */
+.cs-card {
+  position: relative;
+  width: 1015px;
+  height: 438px;
+  flex-shrink: 0;
+  border-radius: 18px;
+  background: #01141b;
+  overflow: hidden;
+}
+
+/* ── Thumbnail ────────────────────────────────────────────── */
+.cs-thumb {
+  position: absolute;
+  top: 25.5px;
+  left: 24px;
+  width: 421.51px;
+  height: 381.5px;
+  border-radius: 11.43px;
+  background: #07193c;
+  overflow: hidden;
+}
+
+.cs-thumb-grid {
+  position: absolute;
+  top: 40.02px;
+  left: 27.01px;
+  width: 367.5px;
+  height: 301.45px;
+  display: grid;
+  grid-template-columns: repeat(2, 138.74px);
+  grid-template-rows: repeat(2, 138.73px);
+  column-gap: 90.02px;
+  row-gap: 24px;
+}
+
+.cs-icon {
+  width: 138.74px;
+  height: 138.73px;
+  object-fit: contain;
+  display: block;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+/* ── Card content ─────────────────────────────────────────── */
+.cs-content {
+  position: absolute;
+  top: 55.49px;
+  left: 523px;
+  width: 480px;
+  height: 327.01px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.cs-content-top {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.cs-tag {
+  font-family: 'Chivo Mono', monospace;
+  font-weight: 400;
+  font-size: 11px;
+  line-height: 130%;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: #2490bb;
+  display: block;
+}
+
+.cs-title {
+  font-family: 'Archivo', sans-serif;
+  font-weight: 400;
+  font-size: 43px;
+  line-height: 120%;
+  letter-spacing: 0;
+  color: #e9f4f9;
+  margin: 0;
+}
+
+.cs-content-bottom {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.cs-company {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.cs-company-logo {
+  height: 30.01px;
+  width: auto;
+  object-fit: contain;
+  display: block;
+}
+
+.cs-company-name {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+  font-size: 22.51px;
+  line-height: 110%;
+  color: #e9f4f9;
+}
+
+.cs-read-more {
+  width: 431px;
+  height: 36px;
+  border: 1px solid rgba(233, 244, 249, 0.5);
+  border-radius: 10px;
+  background: transparent;
+  color: rgba(233, 244, 249, 0.5);
+  font-family: 'Chivo Mono', monospace;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 130%;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: border-color 0.2s ease, color 0.2s ease;
+  flex-shrink: 0;
+}
+
+.cs-read-more:hover {
+  border-color: #e9f4f9;
+  color: #e9f4f9;
+}
+
+/* ── Navigation row ───────────────────────────────────────── */
+.cs-nav {
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 42px;
+  margin-top: 32px;
+  padding: 0 80px;
+}
+
+/* Arrow + dots centred under the active card (card centre = 212.5 + 507.5 = 720px = section centre) */
+.cs-arrow-dots {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 31px;
+}
+
+.cs-arrow {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: 1px solid #0b4b63;
+  background: transparent;
+  color: #e9f4f9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: background 0.2s ease, opacity 0.2s ease;
+}
+
+.cs-arrow:hover:not(:disabled) {
+  background: rgba(11, 75, 99, 0.35);
+}
+
+.cs-arrow:disabled {
+  opacity: 0.3;
+  cursor: default;
+}
+
+.cs-dots {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.cs-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: 0.86px solid #0b4b63;
+  background: transparent;
+  cursor: pointer;
+  padding: 0;
+  flex-shrink: 0;
+  transition: width 0.3s ease, border-radius 0.3s ease, background 0.3s ease;
+}
+
+.cs-dot--active {
+  width: 38.01px;
+  height: 11.91px;
+  border-radius: 6.01px;
+  background: #0b4b63;
+  border-color: #0b4b63;
+}
+
+/* ── View All ─────────────────────────────────────────────── */
+.cs-view-all {
+  margin-left: auto;
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  color: #00b4fd;
+  text-decoration: none;
+  font-family: 'Chivo Mono', monospace;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 130%;
+  text-transform: uppercase;
+  transition: opacity 0.2s ease;
+}
+
+.cs-view-all-text {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.cs-view-all:hover {
+  opacity: 0.8;
+}
+
+/* ── Responsive ──────────────────────────────────────────── */
+@media (max-width: 1200px) {
+  .cs-section {
+    padding: 50px 0 80px;
+  }
+
+  .cs-heading {
+    font-size: 40px;
+  }
+
+  .cs-arrow-dots {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+@media (max-width: 900px) {
+  .cs-heading {
+    font-size: 32px;
+    padding: 0 48px;
+  }
+
+  .cs-track {
+    padding-left: 48px;
+  }
+
+  .cs-card {
+    width: 700px;
+    height: auto;
+    min-height: 380px;
+  }
+
+  .cs-content {
+    width: 220px;
+    left: 370px;
+  }
+
+  .cs-title {
+    font-size: 28px;
+  }
+
+  .cs-read-more {
+    width: 200px;
+  }
+
+  .cs-arrow-dots {
+    position: static;
+    transform: none;
+  }
+
+  .cs-nav {
+    justify-content: center;
+    gap: 20px;
+    padding: 0 48px;
+  }
+
+  .cs-view-all {
+    margin-left: 0;
+  }
+}
+
+@media (max-width: 640px) {
+  .cs-heading {
+    font-size: 26px;
+    padding: 0 24px;
+  }
+
+  .cs-track {
+    padding-left: 24px;
+  }
+
+  .cs-card {
+    width: calc(100vw - 48px);
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .cs-thumb {
+    position: static;
+    width: 100%;
+    height: 220px;
+  }
+
+  .cs-content {
+    position: static;
+    width: 100%;
+    height: auto;
+    min-height: 280px;
+    margin-top: 16px;
+  }
+
+  .cs-read-more {
+    width: 100%;
+  }
+
+  .cs-nav {
+    flex-wrap: wrap;
+    height: auto;
+    gap: 16px;
+    padding: 0 24px;
+    margin-top: 24px;
+  }
+}

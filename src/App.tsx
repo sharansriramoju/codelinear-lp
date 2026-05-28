@@ -6,6 +6,8 @@ import CoreBankingFeatures from './components/CoreBankingFeatures';
 import DigitalBanking from './components/DigitalBanking';
 import CTABanner from './components/CTABanner';
 import Insights from './components/Insights';
+import CaseStudies from './components/CaseStudies';
+import FooterCTA from './components/FooterCTA';
 import './index.css';
 
 function App() {
@@ -19,6 +21,8 @@ function App() {
       <DigitalBanking />
       <CTABanner />
       <Insights />
+      <CaseStudies />
+      <FooterCTA />
     </div>
   );
 }
