@@ -1,0 +1,233 @@
+/* ── Core Banking Features section ───────────────────────── */
+.cbf-section {
+  position: relative;
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  min-height: 681px;
+  background: #000d12;
+  display: flex;
+  align-items: center;
+  padding: 0 80px;
+  gap: 38px;
+  overflow: hidden;
+}
+
+/* ── Left visual ──────────────────────────────────────────── */
+.cbf-visual {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+}
+
+.cbf-dashboard-wrapper {
+  position: relative;
+  width: 651.67px;
+  height: 462px; /* frame 431.99px + bar 30.30px */
+}
+
+.cbf-dashboard-frame {
+  width: 651.67px;
+  height: 431.99px;
+  border-radius: 15.77px 15.77px 0 0;
+  border: 1.05px solid transparent;
+  background:
+    linear-gradient(#000d12, #000d12) padding-box,
+    linear-gradient(106.53deg, #00b4fd -5.68%, #003ace 86.98%) border-box;
+  position: relative;
+  overflow: hidden;
+}
+
+.cbf-dashboard-img {
+  position: absolute;
+  width: 631.15px;
+  height: auto;
+  top: 7.57px;
+  left: 10.22px;
+  display: block;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+.cbf-dashboard-bar {
+  position: absolute;
+  width: 765.94px;
+  height: 30.3px;
+  top: 431.12px;
+  left: -57.14px;
+  border: 1.05px solid transparent;
+  background:
+    linear-gradient(#000d12, #000d12) padding-box,
+    linear-gradient(106.53deg, #00b4fd -5.68%, #003ace 86.98%) border-box;
+  border-radius: 5.26px 5.26px 14.72px 14.72px;
+}
+
+/* ── Right content ────────────────────────────────────────── */
+.cbf-content {
+  width: 590px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 34px;
+  z-index: 1;
+}
+
+.cbf-heading {
+  font-family: "Archivo", sans-serif;
+  font-weight: 400;
+  font-size: 27px;
+  line-height: 130%;
+  letter-spacing: 0;
+  color: #e9f4f9;
+  margin: 0;
+  max-width: 495px;
+}
+
+/* ── Features list ────────────────────────────────────────── */
+.cbf-features {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.cbf-features-label {
+  font-family: "Archivo", sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 130%;
+  letter-spacing: 0;
+  color: #e9f4f9;
+  margin: 0;
+}
+
+.cbf-features-grid {
+  display: flex;
+  gap: 29px;
+}
+
+.cbf-features-col {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  flex: 1;
+}
+
+.cbf-feature-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.cbf-checkmark {
+  width: 13.14px;
+  height: 13.14px;
+  flex-shrink: 0;
+  margin-top: 9.48px;
+  margin-bottom: 8.32px;
+}
+
+.cbf-feature-text {
+  font-family: "Archivo", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 130%;
+  letter-spacing: 0;
+  color: rgba(233, 244, 249, 0.8);
+}
+
+/* ── Responsive ──────────────────────────────────────────── */
+@media (max-width: 1200px) {
+  .cbf-section {
+    gap: 48px;
+    padding: 80px 48px;
+    min-height: auto;
+  }
+
+  .cbf-dashboard-wrapper {
+    width: 480px;
+    height: 340px;
+  }
+
+  .cbf-dashboard-frame {
+    width: 480px;
+    height: 318px;
+  }
+
+  .cbf-dashboard-img {
+    width: 463px;
+    top: 6px;
+    left: 8px;
+  }
+
+  .cbf-dashboard-bar {
+    width: 564px;
+    left: -42px;
+    top: 318px;
+  }
+
+  .cbf-content {
+    width: auto;
+    flex: 1;
+  }
+}
+
+@media (max-width: 900px) {
+  .cbf-section {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 60px 48px;
+    gap: 48px;
+  }
+
+  .cbf-visual {
+    width: 100%;
+  }
+
+  .cbf-dashboard-wrapper {
+    width: 100%;
+    max-width: 560px;
+    height: auto;
+    padding-bottom: 40px;
+  }
+
+  .cbf-dashboard-frame {
+    width: 100%;
+    height: 280px;
+  }
+
+  .cbf-dashboard-img {
+    width: calc(100% - 16px);
+    top: 6px;
+    left: 8px;
+  }
+
+  .cbf-dashboard-bar {
+    width: calc(100% + 40px);
+    left: -20px;
+    top: 280px;
+    height: 30.30px;
+  }
+
+  .cbf-content {
+    width: 100%;
+  }
+
+  .cbf-heading {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 640px) {
+  .cbf-section {
+    padding: 60px 24px;
+  }
+
+  .cbf-heading {
+    font-size: 22px;
+  }
+
+  .cbf-features-grid {
+    flex-direction: column;
+    gap: 12px;
+  }
+}

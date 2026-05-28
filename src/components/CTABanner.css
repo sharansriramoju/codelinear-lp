@@ -1,0 +1,202 @@
+/* ── CTA Banner outer (full-width white bg) ───────────────── */
+.cta-outer {
+  width: 100%;
+  background: #e9f4f9;
+}
+
+/* ── CTA Banner section ───────────────────────────────────── */
+.cta-section {
+  position: relative;
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  height: 681px;
+  background: #e9f4f9;
+  overflow: hidden;
+}
+
+/* ── Card ─────────────────────────────────────────────────── */
+.cta-card {
+  position: absolute;
+  width: 1279px;
+  height: 427px;
+  top: 127px;
+  left: 81px;
+  border-radius: 27px;
+  background: linear-gradient(99.21deg, #031e2a -12.22%, #000d12 59.26%);
+  overflow: hidden;
+  z-index: 1;
+}
+
+/* CB7 watermark — inside card, 50px from right, 20px from bottom, fully contained */
+.cta-watermark {
+  position: absolute;
+  width: 676px;
+  height: 407px;
+  top: 0;
+  left: 553px;
+  opacity: 0.5;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ── Left content ─────────────────────────────────────────── */
+.cta-content {
+  position: absolute;
+  left: 65px;
+  top: 112.28px;
+  width: 607.83px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.cta-heading {
+  font-family: 'Archivo', sans-serif;
+  font-weight: 400;
+  font-size: 53px;
+  line-height: 120%;
+  letter-spacing: -0.53px;
+  color: #e9f4f9;
+  margin: 0;
+}
+
+.cta-subtext {
+  font-family: 'Archivo', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 130%;
+  letter-spacing: 0;
+  color: rgba(233, 244, 249, 0.8);
+  margin: 0;
+  max-width: 462.92px;
+}
+
+/* ── Right buttons ────────────────────────────────────────── */
+.cta-buttons {
+  position: absolute;
+  left: 757px;
+  top: 189px;
+  width: 458px;
+  height: 49px;
+  display: flex;
+  gap: 40px;
+  align-items: center;
+}
+
+.cta-btn-secondary {
+  flex: 1;
+  height: 49px;
+  font-family: 'Chivo Mono', monospace;
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: #e9f4f9;
+  background: transparent;
+  border: 1px solid #e9f4f9;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+  white-space: nowrap;
+}
+
+.cta-btn-secondary:hover {
+  background: rgba(233, 244, 249, 0.08);
+}
+
+.cta-btn-primary {
+  flex: 1;
+  height: 49px;
+  font-family: 'Chivo Mono', monospace;
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: #fff;
+  background: linear-gradient(106.53deg, #00b4fd -5.68%, #003ace 86.98%);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: opacity 0.2s ease, transform 0.15s ease;
+  white-space: nowrap;
+}
+
+.cta-btn-primary:hover {
+  opacity: 0.88;
+  transform: translateY(-1px);
+}
+
+/* ── Responsive ──────────────────────────────────────────── */
+@media (max-width: 1100px) {
+  .cta-section {
+    height: auto;
+    padding: 80px 0;
+  }
+
+  .cta-card {
+    position: relative;
+    left: auto;
+    top: auto;
+    width: calc(100% - 96px);
+    margin: 0 auto;
+    height: auto;
+    padding: 60px 48px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .cta-content {
+    position: static;
+    width: 100%;
+    max-width: 608px;
+  }
+
+  .cta-heading {
+    font-size: 42px;
+  }
+
+  .cta-subtext {
+    max-width: 100%;
+  }
+
+  .cta-buttons {
+    position: static;
+    width: 100%;
+    max-width: 458px;
+    height: 49px;
+  }
+
+  .cta-watermark {
+    left: 0;
+  }
+}
+
+@media (max-width: 640px) {
+  .cta-section {
+    padding: 60px 0;
+  }
+
+  .cta-card {
+    width: calc(100% - 48px);
+    padding: 40px 24px;
+    gap: 32px;
+  }
+
+  .cta-heading {
+    font-size: 32px;
+  }
+
+  .cta-buttons {
+    flex-direction: column;
+    max-width: 100%;
+    height: auto;
+    gap: 16px;
+  }
+
+  .cta-btn-secondary,
+  .cta-btn-primary {
+    width: 100%;
+  }
+}
